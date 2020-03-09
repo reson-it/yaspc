@@ -1,7 +1,7 @@
 {
   "name": "yaspc",
   "productName": "yaspc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My Electron application description",
   "repository": "https://github.com/reson-it/yaspc",
   "main": "src/main.js",
