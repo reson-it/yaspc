@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-y: hidden;
+        }
+
+        label {
+            position: relative;
+            left: 8px;
+        }
+
+        .navbar {
+            width: 300px;
+            height: 100%;
+        }
+
+        .queryinput_container {
+            height: calc(100% - 39px - 57px);
+        }
+
+        #addressbar {
+            width: 280px;
+        }
+
+        #queryinput {
+            width: 280px;
+            height: calc(100% - 15px);
+            resize: none;
+        }
+
+        #go {
+            margin-left: 8px;
+        }
+
+        #page {
+            width: 50px;
+            margin-left: 8px;
+        }
+
+        #resultslimit {
+            width: 50px;
+            margin-left: 8px;
+        }
+
+        .right {
+            width: 50px;
+            position: absolute;
+            left: 230px;
+        }
+
+        .content {
+            position: absolute;
+            left: 300px;
+            top: 0;
+            width: calc(100% - 300px);
+            height: calc(100% - 24px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div>
+            <center>
+                <label for="addressbar">Сайт:</label>
+                <br>
+                <input id="addressbar">
+            </center>
+        </div>
+        
+        <div>
+            <center>
+                <button id="go">Найти!</button>
+            </center>
+            <label for="page">Страница:</label>
+            <input class="right" id="page" type="number">
+            <br>
+            <label for="resultslimit">Макс. позиция:</label>
+            <input class="right" id="resultslimit" type="number">
+        </div>
+
+        <div class="queryinput_container">
+            <center style='height: calc(100% - 17px);'>
+                <label for="queryinput">Запросы:</label>
+                <br>
+                <textarea id="queryinput"></textarea>
+            </center>
+        </div>
+    </div>
+    <span class='content'>
+        <webview style='height: 100%;' id='browser' src='http://www.yandex.ru' preload='./inject.js' autosize></webview>
+    </span>
+
+    <script src="./browser.js"></script>
+</body>
+
+</html>
